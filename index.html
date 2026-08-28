@@ -758,7 +758,7 @@ function infoEl() {
   logoBox.appendChild(logoBoxImg);
   const appName  = mk("div",{style:"font-family:'Georgia',serif;font-size:24px;font-weight:400;color:var(--text-primary)"},"Çiftliğim");
   const appSub   = mk("div",{style:"font-size:13px;color:var(--text-secondary);margin-top:4px"},"Küçükbaş & Büyükbaş Yönetim Sistemi");
-  const verBadge = mk("div",{style:"margin-top:10px;display:inline-block;background:var(--green-light);color:var(--green-dark);font-size:11px;font-weight:600;padding:3px 12px;border-radius:20px"},"Sürüm 1.1.0");
+  const verBadge = mk("div",{style:"margin-top:10px;display:inline-block;background:var(--green-light);color:var(--green-dark);font-size:11px;font-weight:600;padding:3px 12px;border-radius:20px"},"Sürüm 1.2.0");
   logoCard.append(logoBox,appName,appSub,verBadge);
   wrap.appendChild(logoCard);
 
@@ -901,10 +901,19 @@ function infoEl() {
 ══════════════════════════════════════ */
 function downloadBackup() {
   const data = {version:"1.0.0",exportDate:new Date().toISOString(),animals:S.animals,barns:S.barns,finances:S.finances};
-  const blob = new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
+  const json = JSON.stringify(data,null,2);
+  const filename = "ciftlikapp-yedek-"+new Date().toISOString().slice(0,10)+".json";
+  // Android WebView sarmalayıcısı blob: indirmelerini desteklemediği için,
+  // köprü mevcutsa (native uygulama) doğrudan ona devrediyoruz.
+  if (window.AndroidDownloader && window.AndroidDownloader.saveBackup) {
+    const b64 = btoa(unescape(encodeURIComponent(json)));
+    window.AndroidDownloader.saveBackup(b64, filename);
+    return;
+  }
+  const blob = new Blob([json],{type:"application/json"});
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement("a");
-  a.href=url; a.download="ciftlikapp-yedek-"+new Date().toISOString().slice(0,10)+".json"; a.click();
+  a.href=url; a.download=filename; a.click();
   URL.revokeObjectURL(url);
 }
 
