@@ -23,17 +23,19 @@
 
 | | |
 |---|---|
-| 🐄 **Hayvan Yönetimi** | Tekli veya **toplu hayvan ekleme**, küpe/isim takibi, ırk, ağırlık, gebelik durumu |
+| 🐄 **Hayvan Yönetimi** | Tekli veya **toplu hayvan ekleme**, küpe/isim takibi, ırk, ağırlık, gebelik durumu, aynı küpe uyarısı |
+| 🍼 **Doğum Kaydı** | "Doğum Yaptı" ile anneyi güncelleme ve yavruları tek adımda ekleme |
+| 📦 **Satıldı / Öldü Arşivi** | Hayvanlar silinmeden arşivlenir; tekli ve toplu satış kayıtları satılan küpe numaralarını saklar |
 | 🏠 **Ahır Yönetimi** | Ahır ekleme/düzenleme, kapasite takibi ve hayvanların ahırlara dağılımı |
-| 💰 **Finans Takibi** | Gelir/gider kayıtları, toplu hayvan satışı, ödenen/kalan tutar takibi |
-| 🔔 **Akıllı Hatırlatmalar** | Yaklaşan doğumlar, dolan ahırlar, eksik bilgiler için otomatik uyarılar |
-| 🔐 **Google ile Giriş** | Firebase Authentication üzerinden güvenli oturum açma |
-| 📱 **Mobil Uyumlu** | PWA desteği, ana ekrana ekleme ve responsive arayüz |
-| ⬇️ **Yedekleme** | Tüm verileri JSON olarak indirme ve geri yükleme |
+| 💰 **Finans Takibi** | Gelir/gider kayıtları, kayıt düzenleme, ödenen/kalan tutar takibi, aylık ve yıllık kâr/zarar |
+| 🔔 **Akıllı Hatırlatmalar** | Yaklaşan ve geciken doğumlar, dolan ahırlar, eksik bilgiler için otomatik uyarılar |
+| 🔐 **Google ile Giriş** | Firebase Authentication; her kullanıcı yalnızca kendi verisine erişebilir |
+| 📱 **Mobil Uyumlu** | PWA: ana ekrana ekleme, **internetsiz çalışma** ve otomatik güncelleme |
+| ⬇️ **Yedekleme** | Tüm verileri JSON olarak indirme ve geri yükleme (tekrar yüklemek kopya oluşturmaz) |
 
 ## Kullanılan Teknolojiler
 
-- Vanilla JavaScript — framework'süz, bağımlılıksız, tek dosya
+- Vanilla JavaScript — framework'süz, bağımlılıksız, tek HTML dosyası (`index.html`)
 - Firebase (Authentication + Firestore)
 - Progressive Web App (PWA) — service worker (`sw.js`) ve Firestore çevrimdışı önbelleği ile internetsiz çalışma, otomatik güncelleme
 
