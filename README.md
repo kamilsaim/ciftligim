@@ -6,7 +6,7 @@
   Hayvancılık işletmenizi tek ekrandan yönetin: hayvanlar, ahırlar ve finans kayıtları.
 
   [![Canlı Demo](https://img.shields.io/badge/canlı%20demo-kamilsaim.github.io%2Fciftligim-0F6E56?style=flat-square)](https://kamilsaim.github.io/ciftligim/)
-  ![Sürüm](https://img.shields.io/badge/sürüm-v1.2.0-1D9E75?style=flat-square)
+  ![Sürüm](https://img.shields.io/badge/sürüm-v1.3.0-1D9E75?style=flat-square)
   ![PWA](https://img.shields.io/badge/PWA-destekli-0a2e1f?style=flat-square)
   ![Firebase](https://img.shields.io/badge/Firebase-Auth%20%2B%20Firestore-FFCA28?style=flat-square&logo=firebase&logoColor=black)
 </div>
@@ -35,7 +35,7 @@
 
 - Vanilla JavaScript — framework'süz, bağımlılıksız, tek dosya
 - Firebase (Authentication + Firestore)
-- Progressive Web App (PWA) — inline service worker ile çevrimdışı destek ve otomatik güncelleme
+- Progressive Web App (PWA) — service worker (`sw.js`) ve Firestore çevrimdışı önbelleği ile internetsiz çalışma, otomatik güncelleme
 
 ## Çalıştırma
 
